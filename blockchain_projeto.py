@@ -13,6 +13,8 @@ class BrainyApeTrade(Strategy):
         self.side = 0
         self.repeating = collections.deque(maxlen=5)
 
+    # A gente tentou só usar Bollinger bands, mas foi necessario aperfeicoar o metodo
+    # de boillinger bands pra obter o melhor resultado
     def push(self, event):
         self.prices.append(event.price)
         self.shorttermprices.append(event.price)
